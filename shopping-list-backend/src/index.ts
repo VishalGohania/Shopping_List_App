@@ -7,7 +7,12 @@ import itemRoutes from './routes/itemRoutes.js';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://shopping-list-app-frontend-jade.vercel.app'
+  ]
+}));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
